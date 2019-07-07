@@ -21,6 +21,8 @@ JTextField nameField;
 		
 		group.addPLayer(newp);
 		
+		nameField.setText("");
+		
 	}
 
 }

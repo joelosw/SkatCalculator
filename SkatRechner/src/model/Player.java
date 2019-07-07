@@ -14,6 +14,7 @@ public class Player {
 
 	public int AddPoints(int points) {
 		this.points += points;
+		System.out.println(this.name +" got added Points: " + points);
 		return this.points;
 	}
 

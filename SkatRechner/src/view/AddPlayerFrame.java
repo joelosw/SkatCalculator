@@ -20,6 +20,7 @@ import javax.swing.text.JTextComponent;
 
 import controller.AddPLayerAL;
 import controller.SubmitPlayerAL;
+import controller.TextFieldListener;
 import model.PlayerGroup;
 
 public class AddPlayerFrame extends JFrame {
@@ -77,17 +78,7 @@ public AddPlayerFrame() {
 	pbuttons.add(bdone);
 	
 
-	FocusListener fL = new FocusListener() {
-		@Override
-		public void focusLost(FocusEvent e) {
-			// TODO Auto-generated method stub
-		}
-		@Override
-		public void focusGained(FocusEvent e) {
-			((JTextComponent) e.getSource()).setText("");
-			
-		}
-	};
+	FocusListener fL = new TextFieldListener();
 	
 	tname.addFocusListener(fL);
 	
