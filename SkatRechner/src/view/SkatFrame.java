@@ -17,6 +17,7 @@ import javax.swing.table.DefaultTableModel;
 
 import controller.AddPointsAL;
 import controller.TextFieldListener;
+
 import model.Player;
 import model.PlayerGroup;
 import model.SkatTableModel;
@@ -29,7 +30,7 @@ import java.util.ArrayList;
  * @ersion: 2019.07.07
  * 
  **/
-
+// Serialisierbarkeit to be implemented (Fragen wenn geschlossen werden soll....)
 public class SkatFrame extends JFrame {
 	PlayerGroup pgroup;
 	Container c;
@@ -47,17 +48,23 @@ public class SkatFrame extends JFrame {
 	int roundsplayed;
 
 public SkatFrame(PlayerGroup pgroup) {
+	
+	UIManager.getLookAndFeelDefaults()
+    .put("defaultFont", new Font("Arial", Font.BOLD, 18));
+	
+	
 	this.pgroup = pgroup;
 	this.setVisible(true);
 	this.setSize(800, 400);
 	this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	try {
-		UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
-	} catch (ClassNotFoundException | InstantiationException | IllegalAccessException
-			| UnsupportedLookAndFeelException e) {
-
-		e.printStackTrace();
-	}
+		/*
+		 * try {
+		 * UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName()); }
+		 * catch (ClassNotFoundException | InstantiationException |
+		 * IllegalAccessException | UnsupportedLookAndFeelException e) {
+		 * 
+		 * e.printStackTrace(); }
+		 */
 
 	SwingUtilities.updateComponentTreeUI(this);
 	Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
